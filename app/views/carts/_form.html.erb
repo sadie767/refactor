@@ -1,0 +1,5 @@
+<%= form_for item do |f| %>
+  <%= f.hidden_field :item_id, value: item.id %>
+  <%= f.text_field :quantity, placeholder: "Please add input!" %>
+  <span class="waves-effect waves-light btn"><%= f.submit "Update cart" %></span>
+<% end %>

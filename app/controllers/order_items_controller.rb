@@ -8,12 +8,24 @@ class OrderItemsController < ApplicationController
     redirect_to products_path
   end
 
+  def edit
+    @order = current_order
+    @item = @order.order_items.find(params[:id])
+  end
+
   def update
     @order = current_order
     @item = @order.order_items.find(params[:id])
-    @item.update_attributes(item_params)
-    @order.save
+    if @item.update(item_params)
+    flash[:notice] = "Cart updated!"
+    respond_to do |format|
+      format.html { redirect_to cart_path }
+      format.js { render "products/show" }
+    end
+  else
+    render :edit
   end
+end
 
   def destroy
     @order = current_order
