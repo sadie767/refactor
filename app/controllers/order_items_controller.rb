@@ -5,8 +5,11 @@ class OrderItemsController < ApplicationController
     @item = @order.order_items.new(item_params)
     @order.save
     session[:order_id] = @order.id
-    redirect_to products_path
-  end
+    respond_to do |format|
+     format.html { redirect_to products_path }
+     format.js
+   end
+ end
 
   def edit
     @order = current_order
@@ -14,18 +17,12 @@ class OrderItemsController < ApplicationController
   end
 
   def update
-  @order = current_order
-  @item = @order.order_items.find(params[:id])
-  if @item.update(item_params)
-    flash[:notice] = "Cart updated!"
-    respond_to do |format|
-      format.html { redirect_to cart_path }
-      format.js { render "products/show" }
-    end
-  else
-    render :edit
-  end
-end
+   @order = current_order
+   @item = @order.order_items.find(params[:id])
+   @item.update_attributes(item_params)
+   @order.save
+ end
+
 
   def destroy
     @order = current_order
