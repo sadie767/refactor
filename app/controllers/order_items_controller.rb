@@ -21,6 +21,7 @@ class OrderItemsController < ApplicationController
    @item = @order.order_items.find(params[:id])
    @item.update_attributes(item_params)
    @order.save
+   redirect_to cart_path
  end
 
 
