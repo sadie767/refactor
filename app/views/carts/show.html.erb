@@ -5,9 +5,8 @@
   <div id = '<%= item.id %>'>
     <p><%= item.product.name %> | <%= link_to "Delete", order_item_path(item), remote: true, :data => {:confirm => "You sure?", :method => "delete"} %></p>
     <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
-    <div id = 'update_<%= item.id %>'>
-      <%= render 'form', :item => item %>
-    </div>
+    <%= link_to 'Edit Order', order_item_path(item), remote: true %>
+    <%= render 'form', :item => item %>
   </div>
   <% end %>
   <p>Your Total: <%= number_to_currency current_order.total_price %></p>

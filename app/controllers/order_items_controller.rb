@@ -14,9 +14,9 @@ class OrderItemsController < ApplicationController
   end
 
   def update
-    @order = current_order
-    @item = @order.order_items.find(params[:id])
-    if @item.update(item_params)
+  @order = current_order
+  @item = @order.order_items.find(params[:id])
+  if @item.update(item_params)
     flash[:notice] = "Cart updated!"
     respond_to do |format|
       format.html { redirect_to cart_path }
@@ -33,6 +33,11 @@ end
     @item.destroy
     @order.save
     redirect_to cart_path
+  end
+
+  def show
+    @order = current_order
+    @item = @order.order_items.find(params[:id])
   end
 
   private

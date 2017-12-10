@@ -1,5 +1,7 @@
-<%= form_for item do |f| %>
+<div class='update' id='update_<%= item.id %>'>
+<%= form_for item, remote: true do |f| %>
   <%= f.hidden_field :item_id, value: item.id %>
   <%= f.text_field :quantity, placeholder: "Please add input!" %>
   <span class="waves-effect waves-light btn"><%= f.submit "Update cart" %></span>
+</div>
 <% end %>
