@@ -10,6 +10,7 @@
   <nav>
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= link_to "Admin", new_product_path %></li>
         <li><%= link_to "Cart | Total items:", cart_path %></li>
         <li class="edit"><%= item_total %></li>
         <li><%= link_to "See all products", products_path %></li>

@@ -17,6 +17,7 @@ _Refactoring code for a previous employees e-commerce website._
 * _Users should see flash messages for signing up, signing in and signing out._
 * _Users should only be able to create, edit, or destroy products if logged in as an admin_
 * _Users should see a flash message encouraging them to login in as an admin if they try to access pages with CRUD functionality_
+* _Admins should be able to access sigin in the navbar_
 
 ### Technologies Used
 
