@@ -16,6 +16,7 @@ _Refactoring code for a previous employees e-commerce website._
 * _Users should be able to remove items from the shopping cart without a page reload. The "delete" link should result in the item being removed from the shopping cart and the total price being updated._
 * _Users should see flash messages for signing up, signing in and signing out._
 * _Users should only be able to create, edit, or destroy products if logged in as an admin_
+* _Users should see a flash message encouraging them to login in as an admin if they try to access pages with CRUD functionality_
 
 ### Technologies Used
 
