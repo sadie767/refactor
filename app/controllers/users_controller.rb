@@ -10,7 +10,8 @@ class UsersController < ApplicationController
       redirect_to '/'
       flash[:notice] = "Welcome."
     else
-      redirect_to '/signup'
+      redirect_to '/sign_up'
+      flash[:notice] = "Password must be 6 characters."
     end
   end
 
