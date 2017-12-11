@@ -1,0 +1,8 @@
+<h3><%= @product.name %></h3>
+<img src="<%= @product.image %>">
+<h4><%= number_to_currency @product.price %></h4>
+<br>
+<br>
+<h4><%= @product.description %></h4>
+<%= link_to "Edit Product", edit_product_path %><br>
+<%= link_to "Create New Product", new_product_path %>
